@@ -10,9 +10,3 @@ function contagemTotal()
     global $cont_teste;
     $cont_teste = contagem('teste');
 }
-
-function contagemItem()
-{
-    global $cont_item;
-    $cont_item = contagemItens('devolucao', 'equipamento', 'equipamento_id', 'modelo_id', '00907', 'id');
-}

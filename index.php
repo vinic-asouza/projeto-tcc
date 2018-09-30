@@ -3,8 +3,11 @@
 
 <?php
     require_once 'functions.php';
+    require_once ABSPATH.'/Modelos/functions.php';
+
+    index();
+
     contagemTotal();
-    contagemItem();
 
 ?>
 
@@ -43,56 +46,27 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?php if ($modelos) : ?>
+				<?php foreach ($modelos as  $modelo) : ?>
 				<tr>
-					<th scope="row">Modelo 1</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
+					<td class ="text-center">
+						<?php
+                            echo $modelo['nome_equip'];
+                        ?>
+					</td>	
+					<td class ="text-center">
+						<?php
+                            $cont_item = contagemItens('devolucao', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
+                            echo $cont_item;
+                        ?>
+					</td>
 				</tr>
-				<tr>
-					<th scope="row">Modelo 2</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<th scope="row">Modelo 3</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<th scope="row">Modelo 4</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<th scope="row">Modelo 5</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<th scope="row">Modelo 6</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<th scope="row">Modelo 7</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<th scope="row">Modelo 8</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<th scope="row">Modelo 9</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<th scope="row">Modelo 10</th>
-					<td><?php echo $cont_item; ?></td>
-					<td>0</td>
-				</tr>
+				<?php endforeach; ?>
+				<?php else : ?>
+					<tr>
+						<td colspan="6">Nenhum registro encontrado.</td>
+					</tr>
+				<?php endif; ?>
 			</tbody>
 		</table>
 	</div>
