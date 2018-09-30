@@ -20,29 +20,47 @@
 <?php if ($db) : ?>
 
 <div class="row">
-	<div class="col-xs-6 col-sm-3 col-md-3">
+	<div class="col-xs-6 col-sm-7 col-md-5">
 		<table class="table table-bordered">
-		<h3>Quantidades totais</h3>
+		<h2 >Quantidades totais</h2>
 				<thead>
 					<tr>
-						<th scope="col">Total Devoluções</th>
-						<th scope="col">Total Testes</th>
+						<th scope="col" class ="text-center">Total Devoluções</th>
+						<th scope="col" class ="text-center">Total Testes</th>
+						<th scope="col" class ="text-center">Progresso</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td><?php echo $cont_devolucao; ?></td>
-						<td><?php echo $cont_teste; ?></td>
+						<td class ="text-center"><?php echo $cont_devolucao; ?></td>
+						<td class ="text-center"><?php echo $cont_teste; ?></td>
+						<td class ="text-center">
+						<?php 
+                            if ($cont_devolucao && $cont_teste > 0) {
+                                $porcentagem = ($cont_teste / $cont_devolucao) * 100;
+                                $porcentagem = round($porcentagem, 0);
+                            } else {
+                                $porcentagem = 0;
+                            }
+                        ?>
+						<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
+						<?php echo $porcentagem; ?>
+						</div>
+						</div>	
+					</td>
 					</tr>
 				</tbody>
 		</table>
-		<table class="table table-bordered">
-		<h3>Quantidades por modelos</h3>
+		<table class="table table-striped" id="id_tabela">
+		<h2>Quantidades por modelos</h2>
+		<hr />
 			<thead>
 				<tr>
-					<th scope="col">Equipamento</th>
-					<th scope="col">Total Devoluções</th>
-					<th scope="col">Total Testes</th>
+					<th scope="col" class ="text-center">Equipamento</th>
+					<th scope="col" class ="text-center">Total Devoluções</th>
+					<th scope="col" class ="text-center">Total Testes</th>
+					<th scope="col" class ="text-center">Progresso</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -51,14 +69,37 @@
 				<tr>
 					<td class ="text-center">
 						<?php
-                            echo $modelo['nome_equip'];
+                            echo $modelo['modelo_equip'];
                         ?>
 					</td>	
 					<td class ="text-center">
 						<?php
-                            $cont_item = contagemItens('devolucao', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
-                            echo $cont_item;
+                            $cont_item1 = contagemItens('devolucao', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
+                            echo $cont_item1;
                         ?>
+					</td>
+					<td class ="text-center">
+						<?php
+                            $cont_item2 = contagemItens('teste', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
+                            echo $cont_item2;
+                        ?>
+					</td>
+					<td class ="text-center">
+						<?php 
+                            $cont_item1 = contagemItens('devolucao', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
+                            $cont_item2 = contagemItens('teste', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
+                            if ($cont_item1 && $cont_item2 > 0) {
+                                $porcentagem = ($cont_item2 / $cont_item1) * 100;
+                                $porcentagem = round($porcentagem, 0);
+                            } else {
+                                $porcentagem = 0;
+                            }
+                        ?>
+						<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
+						<?php echo $porcentagem; ?>
+						</div>
+						</div>	
 					</td>
 				</tr>
 				<?php endforeach; ?>
