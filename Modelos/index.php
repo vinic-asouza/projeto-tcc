@@ -35,7 +35,7 @@
 			<th class ="text-center">Marca</th>			
 			<th class ="text-center">Modelo</th>
 			<th class ="text-center">Atualizado em</th>
-			<th class ="text-center">Opções</th>	
+			<th class ="text-center">Detalhes</th>	
 		</tr>
 	</thead>
 	<tbody>
@@ -48,11 +48,11 @@
 				<td class ="text-center"><?php echo $modelo['modelo_equip']; ?></td>
 				<td class ="text-center"><?php echo $modelo['modified']; ?></td>
 				<td class="actions text-center">
-					<a href="view.php?id=<?php echo $modelo['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
-					<a href="edit.php?id=<?php echo $modelo['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
-					<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $modelo['id']; ?>">
+					<a href="view.php?id=<?php echo $modelo['id']; ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> Detalhes</a>
+
+					<!--<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $modelo['id']; ?>">
 						<i class="fa fa-trash"></i> Excluir
-					</a>
+					</a>-->
 				</td>
 			</tr>
 		<?php endforeach; ?>

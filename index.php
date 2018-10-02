@@ -21,10 +21,10 @@
 
 <div class="row">
 	<div class="col-xs-6 col-sm-7 col-md-5">
-		<table class="table table-bordered">
+		<table class="table table-striped table-bordered">
 		<h2 >Quantidades totais</h2>
 				<thead>
-					<tr>
+					<tr class="danger">
 						<th scope="col" class ="text-center">Total Devoluções</th>
 						<th scope="col" class ="text-center">Total Testes</th>
 						<th scope="col" class ="text-center">Progresso</th>
@@ -44,7 +44,7 @@
                             }
                         ?>
 						<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
+						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
 						<?php echo $porcentagem; ?>
 						</div>
 						</div>	
@@ -52,11 +52,11 @@
 					</tr>
 				</tbody>
 		</table>
-		<table class="table table-striped" id="id_tabela">
+		<table class="table table-striped table-bordered" id="id_tabela">
 		<h2>Quantidades por modelos</h2>
 		<hr />
 			<thead>
-				<tr>
+				<tr class="info">
 					<th scope="col" class ="text-center">Equipamento</th>
 					<th scope="col" class ="text-center">Total Devoluções</th>
 					<th scope="col" class ="text-center">Total Testes</th>
@@ -96,7 +96,7 @@
                             }
                         ?>
 						<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
+						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
 						<?php echo $porcentagem; ?>
 						</div>
 						</div>	

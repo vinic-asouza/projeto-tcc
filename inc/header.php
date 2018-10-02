@@ -19,9 +19,11 @@
     </style>
     <link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+    
 
     <!-- /links datatable -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
 </head>
 <body>
 
@@ -31,13 +33,13 @@
           <img src="<?php echo BASEURL; ?>img/logo-preto.png" alt="logo" class="navbar-brand">
           <a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand">Controle de Testes </a>
           <a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand"> </a>
-          <a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand">Dashboard</a>
+          <a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand"><i class="fa fa-bar-chart"></i> Dashboard</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">          
             <li class="dropdown">
                 <a href="#" id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    Cadastros <span class="caret"></span>
+                    <i class="fa fa-pencil"></i> Cadastros <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo BASEURL; ?>modelos">Gerenciar Modelos de Equip</a></li>
@@ -47,7 +49,7 @@
             </li>
             <li class="dropdown">
                 <a href="#"  id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    Devoluções <span class="caret"></span>
+                    <i class="fa fa-list-alt"></i> Devoluções<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo BASEURL; ?>devolucao">Registros devoluções</a></li>
@@ -55,7 +57,7 @@
             </li>
             <li class="dropdown">
                 <a href="#"  id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    Testes <span class="caret"></span>
+                    <i class="fa fa-list-alt"></i> Testes<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo BASEURL; ?>teste">Registros Testes</a></li>
@@ -63,7 +65,7 @@
             </li>
             <li class="dropdown">
                 <a href="#"  id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    RMA <span class="caret"></span>
+                    <i class="glyphicon glyphicon-wrench"></i> RMA <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="#">Gerenciar RMA</a></li>
