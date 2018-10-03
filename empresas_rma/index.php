@@ -54,7 +54,7 @@
 		<td><?php echo $empresa['email']; ?></td>
 		<td class ="text-center"><?php echo $empresa['modified']; ?></td>
 		<td class="actions text-center">
-			<a href="view.php?id=<?php echo $empresa['id']; ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> Detalhes</a>
+			<a href="view.php?id=<?php echo $empresa['id']; ?>"><i class="fa fa-eye"></i></a>
 
 			<!--<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $empresa['id']; ?>">
 				<i class="fa fa-trash"></i> Excluir

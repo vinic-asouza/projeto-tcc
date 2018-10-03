@@ -1,11 +1,17 @@
 <?php 
+  require_once dirname(__FILE__).'/../config.php';
+  require_once DBAPI;
   require_once 'functions.php';
   add();
 ?>
 
+
 <?php include HEADER_TEMPLATE; ?>
+<?php $db = open_database(); ?>
 
 <h2>Novo Modelo</h2>
+
+<?php if ($db) : ?>
 
 <form action="add.php" method="post">
   <!-- area de campos do form -->
@@ -22,9 +28,23 @@
       <input type="text" class="form-control" name="modelo['id']">
     </div>
 
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-5">
       <label for="name">Descrição</label>
-      <input type="text" class="form-control" name="modelo['nome_equip']">
+      <select type="text" class="form-control" name="modelo['nome_equip']">
+        <option>
+          ...
+        </option>
+        
+        <?php $item = selectDistinct('id_nome', 'modelo'); ?>
+        <?php foreach ($item as $i) : ?>
+        <option>
+          <?php
+            echo $i;
+          ?>
+        </option>
+        <?php endforeach; ?>
+        
+      </select>
     </div>
 
     <div class="form-group col-md-2">
@@ -35,6 +55,11 @@
     <div class="form-group col-md-2">
       <label for="campo3">Modelo</label>
       <input type="text" class="form-control" name="modelo['modelo_equip']">
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="campo3">Tipo</label>
+      <input type="text" class="form-control" name="modelo['tipo']">
     </div>
 
     <div class="form-group col-md-4">
@@ -52,5 +77,13 @@
     </div>
   </div>
 </form>
+
+
+<?php else : ?>
+	<div class="alert alert-danger" role="alert">
+		<p><strong>ERRO:</strong> Não foi possível Conectar ao Banco de Dados!</p>
+	</div>
+
+<?php endif; ?>
 
 <?php include FOOTER_TEMPLATE; ?>

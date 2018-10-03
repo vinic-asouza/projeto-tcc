@@ -32,11 +32,22 @@
         <div class="navbar-header">
           <img src="<?php echo BASEURL; ?>img/logo-preto.png" alt="logo" class="navbar-brand">
           <a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand">Controle de Testes </a>
-          <a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand"> </a>
-          <a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand"><i class="fa fa-bar-chart"></i> Dashboard</a>
+          <a href="<?php echo BASEURL; ?>#"  id="nome" class="navbar-brand"> </a>
+          <!--<a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand"><i class="fa fa-bar-chart"></i> Dashboard</a>-->
+          
+
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">          
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bar-chart"></i> Dashboard <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo BASEURL; ?>index.php">Tabelas</a></li>
+                    <li><a href="<?php echo BASEURL; ?>#">Gráficos</a></li>
+                </ul>
+            </li>       
             <li class="dropdown">
                 <a href="#" id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-pencil"></i> Cadastros <span class="caret"></span>
@@ -73,6 +84,10 @@
                 </ul>
             </li>
           </ul>
+          <div>
+                <a href="<?php echo BASEURL; ?>#"  id="nome" class="navbar-brand"> </a>
+                <a href="#"  id="nome" class="navbar-brand"><i class="fa fa-user"></i> Login </a>
+          </div>
         </div><!--/.navbar-collapse -->
         
       </div>

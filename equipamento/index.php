@@ -50,7 +50,7 @@
 		<td class ="text-center"><?php echo $equipamento['observacao']; ?></td>
 		<td class ="text-center"><?php echo $equipamento['modified']; ?></td>
 		<td class="actions text-center">
-			<a href="view.php?id=<?php echo $equipamento['id']; ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> Detalhes</a>
+			<a href="view.php?id=<?php echo $equipamento['id']; ?>"><i class="fa fa-eye"></i></a>
 
 			<!--<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $equipamento['id']; ?>">
 				<i class="fa fa-trash"></i> Excluir

@@ -162,6 +162,28 @@ function remove($table = null, $id = null)
     close_database($database);
 }
 
+function selectDistinct($coluna = null, $table = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        $sql = 'SELECT DISTINCT '.$coluna.' FROM '.$table;
+
+        $result = $database->query($sql);
+
+        if ($result->num_rows > 0) {
+            $found = $result->fetch_assoc();
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $found;
+}
+
 function contagem($table = null)
 {
     $database = open_database();

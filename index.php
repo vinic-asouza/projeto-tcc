@@ -4,11 +4,8 @@
 <?php
     require_once 'functions.php';
     require_once ABSPATH.'/Modelos/functions.php';
-
     index();
-
     contagemTotal();
-
 ?>
 
 <?php include HEADER_TEMPLATE; ?>
@@ -58,6 +55,7 @@
 			<thead>
 				<tr class="info">
 					<th scope="col" class ="text-center">Equipamento</th>
+					<th scope="col" class ="text-center">Modelo</th>
 					<th scope="col" class ="text-center">Total Devoluções</th>
 					<th scope="col" class ="text-center">Total Testes</th>
 					<th scope="col" class ="text-center">Progresso</th>
@@ -69,9 +67,14 @@
 				<tr>
 					<td class ="text-center">
 						<?php
+                            echo $modelo['nome_equip'];
+                        ?>
+					</td>
+					<td class ="text-center">
+						<?php
                             echo $modelo['modelo_equip'];
                         ?>
-					</td>	
+					</td>		
 					<td class ="text-center">
 						<?php
                             $cont_item1 = contagemItens('devolucao', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
@@ -92,13 +95,13 @@
                                 $porcentagem = ($cont_item2 / $cont_item1) * 100;
                                 $porcentagem = round($porcentagem, 0);
                             } else {
-                                $porcentagem = 0;
+                                $porcentagem = 100;
                             }
                         ?>
-						<div class="progress">
-						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
-						<?php echo $porcentagem; ?>
-						</div>
+						<div>
+							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
+								<?php echo $porcentagem.'%'; ?>
+							</div>
 						</div>	
 					</td>
 				</tr>

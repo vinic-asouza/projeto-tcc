@@ -76,3 +76,11 @@ function delete($id = null)
 
     header('location: index.php');
 }
+
+/*
+*  function lista($coluna = null)
+*   {
+*      global $lista;
+*     $lista = selectDistinct($coluna, 'modelo');
+*   }
+ */

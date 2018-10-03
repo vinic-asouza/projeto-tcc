@@ -46,7 +46,7 @@
 		<td class ="text-center"><?php echo $funcionario['setor_func']; ?></td>
 		<td class ="text-center"><?php echo $funcionario['modified']; ?></td>
 		<td class="actions text-center">
-			<a href="view.php?id=<?php echo $funcionario['id']; ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> Detalhes</a>
+			<a href="view.php?id=<?php echo $funcionario['id']; ?>"><i class="fa fa-eye"></i></a>
 
 			<!--<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $funcionario['id']; ?>">
 				<i class="fa fa-trash"></i> Excluir

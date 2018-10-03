@@ -32,6 +32,11 @@
     </div>
 
     <div class="form-group col-md-4">
+      <label for="campo3">Tipo</label>
+      <input type="text" class="form-control" name="modelo['tipo']" value="<?php echo $modelo['tipo']; ?>">
+    </div>
+
+    <div class="form-group col-md-4">
       <label for="campo4">Data de Cadastro</label>
       <input type="text" class="form-control" name="modelo['created']" disabled value="<?php echo $modelo['created']; ?>">
     </div>
