@@ -203,13 +203,32 @@ function contagem($table = null)
     return $total;
 }
 
-function contagemItens($table = null, $tablejoin = null, $coluna = null, $colunajoin = null, $item = null, $chavejoin = null)
+function contagemItensPorModelo($table = null, $tablejoin = null, $coluna = null, $colunajoin = null, $item = null, $chavejoin = null)
 {
     $database = open_database();
     $total = null;
 
     try {
         $sql = 'SELECT * FROM '.$table.' INNER JOIN '.$tablejoin.' ON '.$coluna.' = '.$tablejoin.'.'.$chavejoin.' WHERE '.$colunajoin.' = '.$item;
+        $result = $database->query($sql);
+        $total = mysqli_num_rows($result);
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $total;
+}
+
+function contagemItensPorDescricao($table = null, $descricao = null)
+{
+    $database = open_database();
+    $total = null;
+
+    try {
+        $sql = 'SELECT * FROM '.$table.' INNER JOIN equipamento on equipamento_id = equipamento.id INNER JOIN modelo on modelo_id = modelo.id WHERE nome_equip = "'.$descricao.'"';
         $result = $database->query($sql);
         $total = mysqli_num_rows($result);
     } catch (Exception $e) {
