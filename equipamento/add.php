@@ -1,4 +1,6 @@
 <?php 
+  require_once dirname(__FILE__).'/../config.php';
+  require_once DBAPI;
   require_once 'functions.php';
   add();
 ?>
@@ -14,7 +16,19 @@
   
     <div class="form-group col-md-2">
       <label for="id">Modelo</label>
-      <input type="text" class="form-control" name="equipamento['modelo_id']">
+      <select type="text" class="form-control" name="equipamento['modelo_id']">
+        <option>
+          ...
+        </option>
+        <?php $item = selectDistinct('id', 'modelo'); ?>
+        <?php foreach ($item as $i) :  ?>
+        <option ?>
+          <?php
+            echo $i['id'];
+          ?>
+        </option>
+        <?php endforeach; ?>
+      </select>
     </div>
   
     <div class="form-group col-md-4">

@@ -17,7 +17,7 @@
 <?php if ($db) : ?>
 
 <div class="row">
-	<div class="col-xs-6 col-sm-7 col-md-5">
+	<div>
 		<table class="table table-striped table-bordered">
 		<h2 >Quantidades totais</h2>
 				<thead>
@@ -40,9 +40,9 @@
                                 $porcentagem = 0;
                             }
                         ?>
-						<div class="progress">
+						<div>
 						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
-						<?php echo $porcentagem; ?>
+						<?php echo $porcentagem.'%'; ?>
 						</div>
 						</div>	
 					</td>

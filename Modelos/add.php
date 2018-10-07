@@ -30,21 +30,7 @@
 
     <div class="form-group col-md-5">
       <label for="name">Descrição</label>
-      <select type="text" class="form-control" name="modelo['nome_equip']">
-        <option>
-          ...
-        </option>
-        
-        <?php $item = selectDistinct('id_nome', 'modelo'); ?>
-        <?php foreach ($item as $i) : ?>
-        <option>
-          <?php
-            echo $i;
-          ?>
-        </option>
-        <?php endforeach; ?>
-        
-      </select>
+      <input type="text" class="form-control" name="modelo['nome_equip']">
     </div>
 
     <div class="form-group col-md-2">
@@ -59,7 +45,20 @@
 
     <div class="form-group col-md-2">
       <label for="campo3">Tipo</label>
-      <input type="text" class="form-control" name="modelo['tipo']">
+      <select type="text" class="form-control" name="modelo['tipo']">
+        <option>
+          ...
+        </option>
+        
+        <?php $item = selectDistinct('tipo', 'modelo'); ?>
+        <?php foreach ($item as $i) :  ?>
+        <option ?>
+          <?php
+            echo $i['tipo'];
+          ?>
+        </option>
+        <?php endforeach; ?>
+      </select>
     </div>
 
     <div class="form-group col-md-4">

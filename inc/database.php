@@ -172,7 +172,7 @@ function selectDistinct($coluna = null, $table = null)
         $result = $database->query($sql);
 
         if ($result->num_rows > 0) {
-            $found = $result->fetch_assoc();
+            $found = $result->fetch_all(MYSQLI_ASSOC);
         }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
