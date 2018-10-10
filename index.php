@@ -21,7 +21,7 @@ contagemTotal();
 		<h2 >Quantidades Totais</h2>
 		<hr />
 				<thead>
-					<tr class="danger">
+					<tr id="table_total">
 						<th scope="col" class ="text-center">Total Devoluções</th>
 						<th scope="col" class ="text-center">Total Testes</th>
 						<th scope="col" class ="text-center">Saldo Atual</th>
@@ -55,7 +55,7 @@ contagemTotal();
 		<h2>Quantidades por Equipamento</h2>
 		<hr />
 			<thead>
-				<tr class="info">
+				<tr id="table_equip">
 					<th scope="col" class ="text-center">Equipamento</th>
 					<th scope="col" class ="text-center">Total Devoluções</th>
 					<th scope="col" class ="text-center">Total Testes</th>
@@ -120,7 +120,7 @@ contagemTotal();
 		<h2>Quantidades por Modelos</h2>
 		<hr />
 			<thead>
-				<tr class="info">
+				<tr id="table_modelo">
 					<th scope="col" class ="text-center">Equipamento</th>
 					<th scope="col" class ="text-center">Modelo</th>
 					<th scope="col" class ="text-center">Total Devoluções</th>

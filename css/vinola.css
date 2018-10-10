@@ -1,8 +1,19 @@
-#nome{
-    background-color: rgb(57, 114, 182);
-    color:rgb(228, 228, 228);
+#navbar{
+    background-color: #2c2c2c;
+    border-color: #080808;
+    color:rgb(220, 216, 216);
 }
-#negrito {
-    font-weight: bold;
-   }
+#table_total{
+    background-color: rgb(171, 37, 37);
+    color:rgb(255, 255, 255);
+}
+#table_equip{
+    background-color: rgb(50, 61, 177);
+    color:rgb(255, 255, 255);
+}
+#table_modelo{
+    background-color: rgb(53, 172, 87);
+    color:rgb(255, 255, 255);
+}
+
 

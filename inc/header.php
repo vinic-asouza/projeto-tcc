@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="<?php echo BASEURL; ?>css/vinola.css">
     <style>
         body {
-            padding-top: 50px;
-            padding-bottom: 20px;
+            padding-top: 60px;
+            padding-bottom: 60px;
         }
     </style>
     <link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">
@@ -27,20 +27,20 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="nome" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <img src="<?php echo BASEURL; ?>img/logo-preto.png" alt="logo" class="navbar-brand">
-          <a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand">Controle de Testes </a>
-          <a href="<?php echo BASEURL; ?>#"  id="nome" class="navbar-brand"> </a>
-          <!--<a href="<?php echo BASEURL; ?>index.php"  id="nome" class="navbar-brand"><i class="fa fa-bar-chart"></i> Dashboard</a>-->
+          <a href="<?php echo BASEURL; ?>index.php"  id="navbar" class="navbar-brand">Controle de Testes </a>
+          <a href="<?php echo BASEURL; ?>#"  id="navbar" class="navbar-brand"> </a>
+          <!--<a href="<?php echo BASEURL; ?>index.php"  id="navbar" class="navbar-brand"><i class="fa fa-bar-chart"></i> Dashboard</a>-->
           
 
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-                <a href="#" id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a href="#" id="navbar" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-bar-chart"></i> Dashboard <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -49,7 +49,7 @@
                 </ul>
             </li>       
             <li class="dropdown">
-                <a href="#" id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a href="#" id="navbar" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-pencil"></i> Cadastros <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -59,7 +59,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#"  id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a href="#"  id="navbar" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-list-alt"></i> Devoluções<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -67,7 +67,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#"  id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a href="#"  id="navbar" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-list-alt"></i> Testes<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -75,7 +75,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#"  id="nome" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a href="#"  id="navbar" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="glyphicon glyphicon-wrench"></i> RMA <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -85,8 +85,8 @@
             </li>
           </ul>
           <div>
-                <a href="<?php echo BASEURL; ?>#"  id="nome" class="navbar-brand"> </a>
-                <a href="#"  id="nome" class="navbar-brand"><i class="fa fa-user"></i> Login </a>
+                <a href="<?php echo BASEURL; ?>#"  id="navbar" class="navbar-brand"> </a>
+                <a href="#"  id="navbar" class="navbar-brand"><i class="fa fa-user"></i> Login </a>
           </div>
         </div><!--/.navbar-collapse -->
         
@@ -96,7 +96,7 @@
     <main>
     <style>
         body {
-            padding-right: 40px;
-            padding-left: 40px;
+            padding-right: 60px;
+            padding-left: 60px;
         }
     </style>
