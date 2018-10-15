@@ -45,7 +45,7 @@
 		<th class ="text-center">Data</th>
 		<th class ="text-center">Cód. Cliente</th>
 		<th class ="text-center">Serviço</th>
-		<th class ="text-center">Motivo</th>
+		<th class ="text-center">Descrição técnica</th>
 		<th class ="text-center">Avaliação</th>
 		<th class ="text-center">Atualizado em</th>
 		<th class ="text-center">Detalhes</th>

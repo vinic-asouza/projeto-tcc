@@ -17,24 +17,37 @@
       <input type="text" class="form-control" name="modelo['id_modelo']">
     </div>
   -->
-
+ 
     <div class="form-group col-md-2">
       <label for="campo2">Data</label>
-      <input type="text" class="form-control" name="devolucao['data']">
+      <div class="input-group date" data-provide="datepicker">
+        <input type="text" class="form-control" id="exemplo" name="devolucao['data']">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </div>
+      </div>
     </div>
 
     <div class="form-group col-md-4">
       <label for="campo3">Responsável</label>
       <input type="text" class="form-control" name="devolucao['funcionario_id']">
     </div>
-<?php 
-
-  //////////codigo
-
-?>
+    
     <div class="form-group col-md-3">
       <label for="campo4">Cód. Equip.</label>
-      <input type="text" class="form-control" name="devolucao['equipamento_id']">
+      <select type="text" class="form-control" name="devolucao['equipamento_id']">
+        <option>
+          ...
+        </option>
+        <?php $item = selectDistinct('equipamento_id', 'devolucao'); ?>
+        <?php foreach ($item as $i) :  ?>
+        <option ?>
+          <?php
+            echo $i['equipamento_id'];
+          ?>
+        </option>
+        <?php endforeach; ?>
+      </select>
     </div>
 
     <div class="form-group col-md-2">
@@ -48,13 +61,25 @@
     </div>
 
     <div class="form-group col-md-6">
-      <label for="campo7">Motivo</label>
+      <label for="campo7">Descrição técnica</label>
       <input type="text" class="form-control" name="devolucao['motivo']">
     </div>
 
     <div class="form-group col-md-2">
       <label for="campo8">Avaliação</label>
-      <input type="text" class="form-control" name="devolucao['avaliacao']">
+      <select type="text" class="form-control" name="devolucao['equipamento_id']">
+        <option>
+          ...
+        </option>
+        <?php $item = selectDistinct('id', 'avaliacao'); ?>
+        <?php foreach ($item as $i) :  ?>
+        <option ?>
+          <?php
+            echo $i['id'];
+          ?>
+        </option>
+        <?php endforeach; ?>
+      </select>
     </div>
 
     <div class="form-group col-md-4">

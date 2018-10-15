@@ -203,6 +203,25 @@ function contagem($table = null)
     return $total;
 }
 
+function contagemItensPorData($table = null)
+{
+    $database = open_database();
+    $total = null;
+
+    try {
+        $sql = 'SELECT * FROM '.$table.' WHERE data = "'.$data.'"';
+        $result = $database->query($sql);
+        $total = mysqli_num_rows($result);
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $total;
+}
+
 function contagemItensPorModelo($table = null, $tablejoin = null, $coluna = null, $colunajoin = null, $item = null, $chavejoin = null)
 {
     $database = open_database();

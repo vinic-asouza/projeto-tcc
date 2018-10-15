@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
     <link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo BASEURL; ?>css/vinola.css">
     <style>
@@ -17,13 +17,16 @@
             padding-bottom: 60px;
         }
     </style>
-    <link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
-    
 
+    <!-- /links icones -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    
     <!-- /links datatable -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+
+    <!-- Include Date Picker -->
+    <link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap-datepicker.css"/>
+
 </head>
 <body>
 
