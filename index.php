@@ -10,7 +10,7 @@ contagemTotal();
 <?php include HEADER_TEMPLATE; ?>
 <?php $db = open_database(); ?>
 
-<h1>Dashboard</h1>
+<h1>Dashboard / Saldos</h1>
 <hr />
 
 <?php if ($db) : ?>
@@ -43,7 +43,7 @@ contagemTotal();
                             }
                         ?>
 						<div>
-						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
+						<div class="progress-bar progress-bar-info" id="barra_progresso" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
 						<?php echo $porcentagem.'%'; ?>
 						</div>
 						</div>	
@@ -102,7 +102,7 @@ contagemTotal();
                             }
                         ?>
 						<div>
-							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
+							<div class="progress-bar progress-bar-info" id="barra_progresso" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
 								<?php echo $porcentagem.'%'; ?>
 							</div>
 						</div>	
@@ -172,7 +172,7 @@ contagemTotal();
                             }
                         ?>
 						<div>
-							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
+							<div class="progress-bar progress-bar-info" id="barra_progresso" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
 								<?php echo $porcentagem.'%'; ?>
 							</div>
 						</div>	

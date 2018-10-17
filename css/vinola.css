@@ -4,15 +4,19 @@
     color:rgb(220, 216, 216);
 }
 #table_total{
-    background-color: rgb(171, 37, 37);
+    background-color: rgb(74, 123, 193);
     color:rgb(255, 255, 255);
 }
 #table_equip{
-    background-color: rgb(50, 61, 177);
+    background-color: rgb(74, 123, 193);
     color:rgb(255, 255, 255);
 }
 #table_modelo{
-    background-color: rgb(53, 172, 87);
+    background-color: rgb(74, 123, 193);
+    color:rgb(255, 255, 255);
+}
+#barra_progresso{
+    background-color: rgba(74, 124, 193, 0.415);
     color:rgb(255, 255, 255);
 }
 

@@ -36,9 +36,7 @@
           <img src="<?php echo BASEURL; ?>img/logo-preto.png" alt="logo" class="navbar-brand">
           <a href="<?php echo BASEURL; ?>index.php"  id="navbar" class="navbar-brand">Controle de Testes </a>
           <a href="<?php echo BASEURL; ?>#"  id="navbar" class="navbar-brand"> </a>
-          <!--<a href="<?php echo BASEURL; ?>index.php"  id="navbar" class="navbar-brand"><i class="fa fa-bar-chart"></i> Dashboard</a>-->
           
-
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -47,8 +45,9 @@
                     <i class="fa fa-bar-chart"></i> Dashboard <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="<?php echo BASEURL; ?>index.php">Tabelas</a></li>
-                    <li><a href="<?php echo BASEURL; ?>#">Gráficos</a></li>
+                    <li><a href="<?php echo BASEURL; ?>index.php">Saldos</a></li>
+                    <li><a href="<?php echo BASEURL; ?>dashboard/acompanhamento.php">Acompanhamento</a></li>
+                    <li><a href="<?php echo BASEURL; ?>dashboard/graficos.php">Gráficos</a></li>
                 </ul>
             </li>       
             <li class="dropdown">
