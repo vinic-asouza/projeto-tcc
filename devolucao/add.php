@@ -20,12 +20,7 @@
  
     <div class="form-group col-md-2">
       <label for="campo2">Data</label>
-      <div class="input-group date" data-provide="datepicker">
-        <input type="text" class="form-control" id="exemplo" name="devolucao['data']">
-        <div class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar"></span>
-        </div>
-      </div>
+      <input type="text" class="form-control" name="devolucao['data']">
     </div>
 
     <div class="form-group col-md-4">
@@ -35,19 +30,7 @@
     
     <div class="form-group col-md-3">
       <label for="campo4">Cód. Equip.</label>
-      <select type="text" class="form-control" name="devolucao['equipamento_id']">
-        <option>
-          ...
-        </option>
-        <?php $item = selectDistinct('equipamento_id', 'devolucao'); ?>
-        <?php foreach ($item as $i) :  ?>
-        <option ?>
-          <?php
-            echo $i['equipamento_id'];
-          ?>
-        </option>
-        <?php endforeach; ?>
-      </select>
+      <input type="text" class="form-control" name="devolucao['equipamento_id']">
     </div>
 
     <div class="form-group col-md-2">
@@ -67,7 +50,7 @@
 
     <div class="form-group col-md-2">
       <label for="campo8">Avaliação</label>
-      <select type="text" class="form-control" name="devolucao['equipamento_id']">
+      <select type="text" class="form-control" name="devolucao['avaliacao']">
         <option>
           ...
         </option>

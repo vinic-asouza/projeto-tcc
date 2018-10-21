@@ -1,7 +1,7 @@
 <?php 
-require_once 'config.php';
+require_once '../config.php';
 require_once DBAPI;
-require_once 'functions.php';
+require_once '../functions.php';
 require_once ABSPATH.'/Modelos/functions.php';
 index();
 contagemTotal();
@@ -10,7 +10,7 @@ contagemTotal();
 <?php include HEADER_TEMPLATE; ?>
 <?php $db = open_database(); ?>
 
-<h1>Dashboard / Saldos</h1>
+<h1>Dashboard / Saldos / Janeiro</h1>
 <hr />
 
 <?php if ($db) : ?>
@@ -18,8 +18,8 @@ contagemTotal();
 <div class="row">
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Geral</a></li>
-  <li role="presentation"><a href="<?php echo BASEURL; ?>dashboard/dash_janeiro.php">Janeiro</a></li>
+  <li role="presentation"><a href="../index.php">Geral</a></li>
+  <li role="presentation" class="active"><a href="#">Janeiro</a></li>
   <li role="presentation"><a href="#">Fevereiro</a></li>
 </ul>
 

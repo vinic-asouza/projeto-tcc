@@ -33,7 +33,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <img src="<?php echo BASEURL; ?>img/logo-preto.png" alt="logo" class="navbar-brand">
+          <img src="<?php echo BASEURL; ?>img/logo-branco.png" alt="logo" class="navbar-brand">
           <a href="<?php echo BASEURL; ?>index.php"  id="navbar" class="navbar-brand">Controle de Testes </a>
           <a href="<?php echo BASEURL; ?>#"  id="navbar" class="navbar-brand"> </a>
           
@@ -46,8 +46,8 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo BASEURL; ?>index.php">Saldos</a></li>
-                    <li><a href="<?php echo BASEURL; ?>dashboard/acompanhamento.php">Acompanhamento</a></li>
-                    <li><a href="<?php echo BASEURL; ?>dashboard/graficos.php">Gráficos</a></li>
+                    <li><a href="<?php echo BASEURL; ?>acompanhamento.php">Acompanhamento</a></li>
+                    <li><a href="<?php echo BASEURL; ?>graficos.php">Gráficos</a></li>
                 </ul>
             </li>       
             <li class="dropdown">
