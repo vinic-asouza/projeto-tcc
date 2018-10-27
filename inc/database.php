@@ -228,7 +228,9 @@ function contagemItensPorModelo($table = null, $tablejoin = null, $coluna = null
     $total = null;
 
     try {
-        $sql = 'SELECT * FROM '.$table.' INNER JOIN '.$tablejoin.' ON '.$coluna.' = '.$tablejoin.'.'.$chavejoin.' WHERE '.$colunajoin.' = '.$item;
+        $sql = 'SELECT * FROM '.$table.' 
+        INNER JOIN '.$tablejoin.' ON '.$coluna.' = '.$tablejoin.'.'.$chavejoin.' 
+        WHERE '.$colunajoin.' = '.$item;
         $result = $database->query($sql);
         $total = mysqli_num_rows($result);
     } catch (Exception $e) {

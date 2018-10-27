@@ -1,16 +1,15 @@
 <?php 
-require_once 'config.php';
+require_once '../config.php';
 require_once DBAPI;
 require_once 'functions.php';
 require_once ABSPATH.'/Modelos/functions.php';
 index();
-contagemTotal();
 ?>
 
 <?php include HEADER_TEMPLATE; ?>
 <?php $db = open_database(); ?>
 
-<h1>Dashboard / Saldos</h1>
+<h1>Dashboard / Saldos / Janeiro</h1>
 <hr />
 
 <?php if ($db) : ?>
@@ -32,6 +31,10 @@ contagemTotal();
 					</tr>
 				</thead>
 				<tbody>
+					<?php
+                        $cont_devolucao = contagemDevolucaoTotalMes('01');
+                        $cont_teste = contagemTesteTotalMes('01');
+                    ?>
 					<tr>
 						<td class ="text-center"><?php echo $cont_devolucao; ?></td>
 						<td class ="text-center"><?php echo $cont_teste; ?></td>
@@ -71,8 +74,8 @@ contagemTotal();
 				<?php if ($item) : ?>
 				<?php foreach ($item as $i) :  ?>
 				<?php 
-                    $cont_descricao_devolucao = contagemItensPorDescricao('devolucao', $i['nome_equip']);
-                    $cont_descricao_teste = contagemItensPorDescricao('teste', $i['nome_equip']);
+                    $cont_descricao_devolucao = contagemMensalPorDescricao('devolucao', $i['nome_equip'], 'data', '01');
+                    $cont_descricao_teste = contagemMensalPorDescricao('teste', $i['nome_equip'], 'created', '01');
                 ?>
 				<tr>
 					<td class ="text-center">
@@ -136,8 +139,8 @@ contagemTotal();
 				<?php if ($modelos) : ?>
 				<?php foreach ($modelos as  $modelo) : ?>
 				<?php 
-                    $cont_itens_devolucao = contagemItensPorModelo('devolucao', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
-                    $cont_itens_teste = contagemItensPorModelo('teste', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
+                    $cont_itens_devolucao = contagemMensalPorModelo('devolucao', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id', 'data', '01');
+                    $cont_itens_teste = contagemMensalPorModelo('teste', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id', 'created', '01');
                 ?>
 				<tr>
 					<td class ="text-center">
