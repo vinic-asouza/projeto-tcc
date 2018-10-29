@@ -21,7 +21,7 @@ $('#delete-modal').on('show.bs.modal', function (event) {
   var id = button.data('modelo');
   
   var modal = $(this);
-  modal.find('.modal-title').text('Excluir Modelo #' + id);
+  modal.find('.modal-title').text('Excluir Item #' + id);
   modal.find('#confirm').attr('href', 'delete.php?id=' + id);
 });
 

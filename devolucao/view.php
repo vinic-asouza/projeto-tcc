@@ -29,26 +29,13 @@
 	<dd><?php echo $devolucao['avaliacao']; ?></dd>
 </dl>
 
-<!--
-<dl class="dl-horizontal">
-	<dt>xxx:</dt>
-	<dd><?//php echo $customer['address']; ?></dd>
-
-	<dt>xxx:</dt>
-	<dd><?//php echo $customer['hood']; ?></dd>
-
-	<dt>xxx:</dt>
-	<dd><//?php echo $customer['zip_code']; ?></dd>
-
-	<dt>xxx:</dt>
-	<dd><?//php echo $customer['created']; ?></dd>
-</dl>
--->
-
 <div id="actions" class="row">
 	<div class="col-md-12">
-	  <a href="edit.php?id=<?php echo $devolucao['id']; ?>" class="btn btn-primary">Editar</a>
-	  <a href="index.php" class="btn btn-default">Voltar</a>
+		<a href="edit.php?id=<?php echo $devolucao['id']; ?>" class="btn btn-primary">Editar</a>
+		<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $devolucao['id']; ?>">
+			<i class="fa fa-trash"></i> Excluir
+		</a>
+		<a href="index.php" class="btn btn-default">Voltar</a>
 	</div>
 </div>
 

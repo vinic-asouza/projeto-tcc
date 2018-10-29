@@ -68,9 +68,9 @@
 		<td class="actions text-center">
 			<a href="view.php?id=<?php echo $devolucao['id']; ?>"><i class="fa fa-eye"></i></a>
 
-			<!--<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $devolucao['id']; ?>">
+			<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $devolucao['id']; ?>">
 				<i class="fa fa-trash"></i> Excluir
-			</a>-->
+			</a>
 		</td>
 	</tr>
 

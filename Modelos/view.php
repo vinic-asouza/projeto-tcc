@@ -26,23 +26,6 @@
 	<dd><?php echo $modelo['modelo_equip']; ?></dd>
 </dl>
 
-<!--
-<dl class="dl-horizontal">
-	<dt>xxx:</dt>
-	<dd><?//php echo $customer['address']; ?></dd>
-
-	<dt>xxx:</dt>
-	<dd><?//php echo $customer['hood']; ?></dd>
-
-	<dt>xxx:</dt>
-	<dd><//?php echo $customer['zip_code']; ?></dd>
-
-	<dt>xxx:</dt>
-	<dd><?//php echo $customer['created']; ?></dd>
-</dl>
--->
-
-
 <div id="actions" class="row">
 	<div class="col-md-12">
 	  <a href="edit.php?id=<?php echo $modelo['id']; ?>" class="btn btn-primary">Editar</a>
