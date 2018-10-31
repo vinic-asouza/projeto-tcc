@@ -25,27 +25,16 @@
 	<dd><?php echo $teste['avaliacao']; ?></dd>
 </dl>
 
-<!--
-<dl class="dl-horizontal">
-	<dt>xxx:</dt>
-	<dd><?//php echo $customer['address']; ?></dd>
-
-	<dt>xxx:</dt>
-	<dd><?//php echo $customer['hood']; ?></dd>
-
-	<dt>xxx:</dt>
-	<dd><//?php echo $customer['zip_code']; ?></dd>
-
-	<dt>xxx:</dt>
-	<dd><?//php echo $customer['created']; ?></dd>
-</dl>
--->
-
 <div id="actions" class="row">
 	<div class="col-md-12">
-	  <a href="edit.php?id=<?php echo $teste['id']; ?>" class="btn btn-primary">Editar</a>
-	  <a href="index.php" class="btn btn-default">Voltar</a>
+		<a href="edit.php?id=<?php echo $teste['id']; ?>" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a>
+		<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $teste['id']; ?>">
+			<i class="fa fa-trash"></i> Excluir
+		</a>
+		<a href="index.php" class="btn btn-default">Voltar</a>
 	</div>
 </div>
+
+<?php include 'modal.php'; ?>
 
 <?php include FOOTER_TEMPLATE; ?>

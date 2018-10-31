@@ -73,10 +73,6 @@
 		<td class ="text-center"><?php echo $teste['modified']; ?></td>
 		<td class="actions text-center">
 			<a href="view.php?id=<?php echo $teste['id']; ?>"><i class="fa fa-eye"></i></a>
-
-			<!--<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $teste['id']; ?>">
-				<i class="fa fa-trash"></i> Excluir
-			</a>-->
 		</td>
 	</tr>
 
@@ -98,30 +94,6 @@
 </table>
 
 <div id="situacao" style="width: 700px; height: 300px;"> </div>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Situação', 'Quantidade'],
-          ['OK',     	<?php echo $cont_ok; ?>],
-          ['DEFEITO',	<?php echo $cont_defeito; ?>],
-
-        ]);
-
-        var options = {
-          title: 'Estatistica de Situação'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('situacao'));
-
-        chart.draw(data, options);
-      }
-	</script>
 	
 <?php include 'modal.php'; ?>
 

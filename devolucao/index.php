@@ -67,10 +67,6 @@
 		<td class ="text-center"><?php echo $devolucao['modified']; ?></td>
 		<td class="actions text-center">
 			<a href="view.php?id=<?php echo $devolucao['id']; ?>"><i class="fa fa-eye"></i></a>
-
-			<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $devolucao['id']; ?>">
-				<i class="fa fa-trash"></i> Excluir
-			</a>
 		</td>
 	</tr>
 
@@ -92,30 +88,6 @@
 </table>
 
 <div id="piechart" style="width: 700px; height: 300px;"></div>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Avaliação', 'Quantidade'],
-          ['SIG',     <?php echo $cont_sig; ?>],
-          ['CAN',     <?php echo $cont_can; ?>],
-
-        ]);
-
-        var options = {
-          title: 'Estatistica de Avaliações'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
 
 <?php include 'modal.php'; ?>
 
