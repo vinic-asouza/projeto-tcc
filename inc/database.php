@@ -183,6 +183,46 @@ function findEquipamento($table = null, $id = null)
 
     return $found;
 }
+/**
+ *  CONSERTO - TABELA / VIEW -----------------------------------------------------------------------------------------------.
+ */
+function findConserto($table = null, $id = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($id) {
+            $sql = 'SELECT *, c.id
+            FROM '.$table.' as c
+            INNER JOIN empresa_conserto as e on empresa_conserto_id = e.id
+            INNER JOIN modelo as m on modelo_id = m.id
+            WHERE c.id = '.$id;
+
+            $result = $database->query($sql);
+
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_assoc();
+            }
+        } else {
+            $sql = 'SELECT *, c.id
+            FROM '.$table.' as c
+            INNER JOIN empresa_conserto as e on empresa_conserto_id = e.id
+            INNER JOIN modelo as m on modelo_id = m.id';
+            $result = $database->query($sql);
+
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $found;
+}
 
 /**
  *  Pesquisa Todos os Registros de uma Tabela.

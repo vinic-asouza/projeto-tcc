@@ -81,7 +81,7 @@
                     <i class="glyphicon glyphicon-wrench"></i> RMA <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Gerenciar RMA</a></li>
+                    <li><a href="<?php echo BASEURL; ?>conserto">Gerenciar RMA</a></li>
                     <li><a href="<?php echo BASEURL; ?>empresas_rma">Empresas</a></li>
                 </ul>
             </li>
