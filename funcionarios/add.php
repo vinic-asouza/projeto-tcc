@@ -12,12 +12,12 @@
   <hr />
   <div class="row">
   
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-2">
       <label for="id">Código</label>
       <input type="text" class="form-control" name="funcionario['id']">
     </div>
   
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <label for="name">Nome</label>
       <input type="text" class="form-control" name="funcionario['nome_funcionario']">
     </div>

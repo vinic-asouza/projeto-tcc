@@ -12,12 +12,12 @@
   <hr />
   <div class="row">
   
-    <div class="form-group col-md-5">
+    <div class="form-group col-md-4">
       <label for="name">Nome</label>
       <input type="text" class="form-control" name="empresa_conserto['nome_empresa']">
     </div>
 
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <label for="campo2">Cidade</label>
       <input type="text" class="form-control" name="empresa_conserto['cidade']">
     </div>

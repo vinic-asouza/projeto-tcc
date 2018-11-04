@@ -5,7 +5,6 @@ require_once 'functions.php';
 require_once ABSPATH.'/Modelos/functions.php';
 index();
 contagemTotal();
-
 ?>
 
 <?php include HEADER_TEMPLATE; ?>
@@ -33,7 +32,6 @@ contagemTotal();
   <li role="presentation"><a href="<?php echo BASEURL; ?>dashboard/dash_11.php">Novembro</a></li>
   <li role="presentation"><a href="<?php echo BASEURL; ?>dashboard/dash_12.php">Dezembro</a></li>
 </ul>
-
 	<div>
 		<table class="table table-striped table-bordered">
 		<h2 >Quantidades Totais</h2>
@@ -44,6 +42,7 @@ contagemTotal();
 						<th scope="col" class ="text-center">Total Testes</th>
 						<th scope="col" class ="text-center">Saldo Atual</th>
 						<th scope="col" class ="text-center">Progresso</th>
+						<th scope="col" class ="text-center">RMA</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -52,20 +51,21 @@ contagemTotal();
 						<td class ="text-center"><?php echo $cont_teste; ?></td>
 						<td class ="text-center"><?php echo $cont_devolucao - $cont_teste; ?></td>
 						<td class ="text-center">
-						<?php 
-                            if ($cont_devolucao && $cont_teste > 0) {
-                                $porcentagem = ($cont_teste / $cont_devolucao) * 100;
-                                $porcentagem = round($porcentagem, 0);
-                            } else {
-                                $porcentagem = 0;
-                            }
-                        ?>
-						<div>
-						<div class="progress-bar progress-bar-info" id="barra_progresso" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
-						<?php echo $porcentagem.'%'; ?>
-						</div>
-						</div>	
-					</td>
+							<?php 
+                                if ($cont_devolucao && $cont_teste > 0) {
+                                    $porcentagem = ($cont_teste / $cont_devolucao) * 100;
+                                    $porcentagem = round($porcentagem, 0);
+                                } else {
+                                    $porcentagem = 0;
+                                }
+                            ?>
+							<div>
+							<div class="progress-bar progress-bar-info" id="barra_progresso" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem; ?>%;">
+							<?php echo $porcentagem.'%'; ?>
+							</div>
+							</div>	
+						</td>
+						<td class ="text-center"><?php echo $cont_rma; ?></td>
 					</tr>
 				</tbody>
 		</table>
@@ -79,6 +79,7 @@ contagemTotal();
 					<th scope="col" class ="text-center">Total Testes</th>
 					<th scope="col" class ="text-center">Saldo Atual</th>
 					<th scope="col" class ="text-center">Progresso</th>
+					<th scope="col" class ="text-center">RMA</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -88,6 +89,7 @@ contagemTotal();
 				<?php 
                     $cont_descricao_devolucao = contagemItensPorDescricao('devolucao', $i['nome_equip']);
                     $cont_descricao_teste = contagemItensPorDescricao('teste', $i['nome_equip']);
+                    $cont_descricao_rma = contagemRMAPorDescricao('conserto', $i['nome_equip']);
                 ?>
 				<tr>
 					<td class ="text-center">
@@ -125,6 +127,11 @@ contagemTotal();
 							</div>
 						</div>	
 					</td>
+					<td class ="text-center">
+						<?php
+                            echo $cont_descricao_rma;
+                        ?>
+					</td>
 				</tr>
 				<?php endforeach; ?>
 				<?php else : ?>
@@ -145,6 +152,7 @@ contagemTotal();
 					<th scope="col" class ="text-center">Total Testes</th>
 					<th scope="col" class ="text-center">Saldo Atual</th>
 					<th scope="col" class ="text-center">Progresso</th>
+					<th scope="col" class ="text-center">RMA</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -153,6 +161,7 @@ contagemTotal();
 				<?php 
                     $cont_itens_devolucao = contagemItensPorModelo('devolucao', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
                     $cont_itens_teste = contagemItensPorModelo('teste', 'equipamento', 'equipamento_id', 'modelo_id', $modelo['id'], 'id');
+                    $cont_itens_rma = contagemRMAPorModelo('conserto', $modelo['modelo_equip']);
                 ?>
 				<tr>
 					<td class ="text-center">
@@ -195,6 +204,11 @@ contagemTotal();
 							</div>
 						</div>	
 					</td>
+					<td class ="text-center">
+						<?php
+                            echo $cont_itens_rma;
+                        ?>
+					</td>
 				</tr>
 				<?php endforeach; ?>
 				<?php else : ?>
@@ -204,18 +218,6 @@ contagemTotal();
 				<?php endif; ?>
 			</tbody>
 		</table>
-	</div>
-</div>
-
-<hr />
-
-<div class="row">
-	<div class="col-xs-6 col-sm-3 col-md-6">
-		Ambiente para desenvolver analise de dados e estatistica.
-	</div>
-
-	<div class="col-xs-6 col-sm-3 col-md-6">
-		Ambiente para desenvolver analise de dados e estatistica.
 	</div>
 </div>
 

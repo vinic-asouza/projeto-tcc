@@ -23,8 +23,8 @@
       <input type="text" class="form-control" name="devolucao['data']">
     </div>
 
-    <div class="form-group col-md-4">
-      <label for="campo3">Responsável</label>
+    <div class="form-group col-md-2">
+      <label for="campo3">Cód. Responsável</label>
       <input type="text" class="form-control" name="devolucao['funcionario_id']">
     </div>
     
@@ -38,12 +38,12 @@
       <input type="text" class="form-control" name="devolucao['cod_cliente']">
     </div>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label for="campo6">Serviço</label>
       <input type="text" class="form-control" name="devolucao['servico']">
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-10">
       <label for="campo7">Descrição técnica</label>
       <input type="text" class="form-control" name="devolucao['motivo']">
     </div>

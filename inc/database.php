@@ -429,3 +429,51 @@ function contagemItensPorDescricao($table = null, $descricao = null)
 
     return $total;
 }
+
+function contagemRMAPorDescricao($table = null, $descricao = null)
+{
+    $database = open_database();
+    $total = null;
+
+    try {
+        $sql = 'SELECT *, c.id
+        FROM '.$table.' as c
+        INNER JOIN empresa_conserto as e on empresa_conserto_id = e.id
+        INNER JOIN modelo as m on modelo_id = m.id
+        WHERE m.nome_equip = "'.$descricao.'"';
+
+        $result = $database->query($sql);
+        $total = mysqli_num_rows($result);
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $total;
+}
+
+function contagemRMAPorModelo($table = null, $descricao = null)
+{
+    $database = open_database();
+    $total = null;
+
+    try {
+        $sql = 'SELECT *, c.id
+        FROM '.$table.' as c
+        INNER JOIN empresa_conserto as e on empresa_conserto_id = e.id
+        INNER JOIN modelo as m on modelo_id = m.id
+        WHERE m.modelo_equip = "'.$descricao.'"';
+
+        $result = $database->query($sql);
+        $total = mysqli_num_rows($result);
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $total;
+}

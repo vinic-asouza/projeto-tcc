@@ -12,6 +12,8 @@ function contagemTotal()
     $cont_devolucao = contagem('devolucao');
     global $cont_teste;
     $cont_teste = contagem('teste');
+    global $cont_rma;
+    $cont_rma = contagem('conserto');
 }
 
 function contagemPorItem()

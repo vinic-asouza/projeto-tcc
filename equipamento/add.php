@@ -31,12 +31,12 @@
       </select>
     </div>
   
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label for="name">MAC</label>
       <input type="text" class="form-control" name="equipamento['mac_address']">
     </div>
 
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <label for="campo2">Num. Série</label>
       <input type="text" class="form-control" name="equipamento['num_serie']">
     </div>
