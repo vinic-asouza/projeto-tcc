@@ -5,6 +5,7 @@ require_once 'functions.php';
 require_once ABSPATH.'/Modelos/functions.php';
 index();
 contagemTotal();
+
 ?>
 
 <?php include HEADER_TEMPLATE; ?>

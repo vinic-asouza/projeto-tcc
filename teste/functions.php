@@ -6,6 +6,9 @@ require_once DBAPI;
 $testes = null;
 $teste = null;
 
+$selectTeste = null;
+$selectTeste = null;
+
 /**
  *  Listagem de Clientes.
  */
@@ -13,6 +16,12 @@ function index()
 {
     global $testes;
     $testes = find_all('teste');
+}
+
+function indexTeste()
+{
+    global $selectTeste;
+    $selectTeste = findTeste('teste');
 }
 
 /**
@@ -50,7 +59,7 @@ function edit()
             header('location: index.php');
         } else {
             global $teste;
-            $teste = find('teste', $id);
+            $teste = findTeste('teste', $id);
         }
     } else {
         header('location: index.php');
@@ -63,7 +72,7 @@ function edit()
 function view($id = null)
 {
     global $teste;
-    $teste = find('teste', $id);
+    $teste = findTeste('teste', $id);
 }
 
 /**

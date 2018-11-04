@@ -90,15 +90,14 @@
                 <a href="<?php echo BASEURL; ?>#"  id="navbar" class="navbar-brand"> </a>
                 <a href="#"  id="navbar" class="navbar-brand"><i class="fa fa-user"></i> Login </a>
           </div>
-        </div><!--/.navbar-collapse -->
-        
+        </div>
       </div>
     </nav>
 
     <main>
     <style>
         body {
-            padding-right: 60px;
-            padding-left: 60px;
+            padding-right: 30px;
+            padding-left: 30px;
         }
     </style>

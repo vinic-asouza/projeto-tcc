@@ -15,15 +15,22 @@
 <dl class="dl-horizontal">
 	<dt>Modelo:</dt>
 	<dd><?php echo $equipamento['modelo_id']; ?></dd>
-
+	<dt>Nome:</dt>
+	<dd><?php echo $equipamento['nome_equip']; ?></dd>
+	<dt>Marca:</dt>
+	<dd><?php echo $equipamento['marca_equip']; ?></dd>
+	<dt>Modelo:</dt>
+	<dd><?php echo $equipamento['modelo_equip']; ?></dd>
+	<dt>Tipo:</dt>
+	<dd><?php echo $equipamento['tipo']; ?></dd> <hr>
 	<dt>MAC:</dt>
 	<dd><?php echo $equipamento['mac_address']; ?></dd>
-
 	<dt>Num. Série:</dt>
-	<dd><?php echo $equipamento['num_serie']; ?></dd>
-
-	<dt>Obs.:</dt>
-	<dd><?php echo $equipamento['observacao']; ?></dd>
+	<dd><?php echo $equipamento['num_serie']; ?></dd> <hr>
+	<dt>Obs:</dt>
+	<dd><?php echo $equipamento['observacao']; ?></dd> <hr>
+	<dt>Atualizado em:</dt>
+	<dd><?php echo $equipamento['modified']; ?></dd> <hr>
 </dl>
 
 <div id="actions" class="row">

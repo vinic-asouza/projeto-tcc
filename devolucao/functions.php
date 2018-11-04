@@ -21,7 +21,7 @@ function index()
 function indexDevolucao()
 {
     global $selectDevolucoes;
-    $selectDevolucoes = selectDevolucao('devolucao');
+    $selectDevolucoes = findDevolucao('devolucao');
 }
 
 /**
@@ -59,7 +59,7 @@ function edit()
             header('location: index.php');
         } else {
             global $devolucao;
-            $devolucao = find('devolucao', $id);
+            $devolucao = findDevolucao('devolucao', $id);
         }
     } else {
         header('location: index.php');
@@ -72,7 +72,7 @@ function edit()
 function view($id = null)
 {
     global $devolucao;
-    $devolucao = find('devolucao', $id);
+    $devolucao = findDevolucao('devolucao', $id);
 }
 
 /**

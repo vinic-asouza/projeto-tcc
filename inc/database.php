@@ -2,6 +2,9 @@
 
 mysqli_report(MYSQLI_REPORT_STRICT);
 
+/**
+ * OPEN / CLOSE DB -----------------------------------------------------------------------------------------------.
+ */
 function open_database()
 {
     try {
@@ -24,7 +27,7 @@ function close_database($conn)
     }
 }
 /**
- *  Pesquisa um Registro pelo ID em uma Tabela.
+ *  GERAL - TABELA / VIEW -----------------------------------------------------------------------------------------------.
  */
 function find($table = null, $id = null)
 {
@@ -32,12 +35,7 @@ function find($table = null, $id = null)
     $found = null;
     try {
         if ($id) {
-            $sql = 'SELECT *, d.id
-            FROM '.$table.' as d
-            INNER JOIN equipamento as e on equipamento_id = e.id 
-            INNER JOIN modelo as m on modelo_id = m.id
-            INNER JOIN funcionario as f on funcionario_id = f.id
-            WHERE d.id = '.$id;
+            $sql = 'SELECT * FROM '.$table.' WHERE id = '.$id;
 
             $result = $database->query($sql);
 
@@ -62,25 +60,25 @@ function find($table = null, $id = null)
     return $found;
 }
 /**
- *  SELECT DEVOLUCAO (ITENS PARA SEREM MOSTRADOS).
+ *  DEVOLUCAO - TABELA / VIEW -----------------------------------------------------------------------------------------------.
  */
-function selectDevolucao($table = null, $id = null)
+function findDevolucao($table = null, $id = null)
 {
     $database = open_database();
     $found = null;
     try {
         if ($id) {
             $sql = 'SELECT *, d.id
-                    FROM '.$table.' as d
-                    INNER JOIN equipamento as e on equipamento_id = e.id 
-                    INNER JOIN modelo as m on modelo_id = m.id
-                    INNER JOIN funcionario as f on funcionario_id = f.id
-                    WHERE d.id = '.$id;
+            FROM '.$table.' as d
+            INNER JOIN equipamento as e on equipamento_id = e.id 
+            INNER JOIN modelo as m on modelo_id = m.id
+            INNER JOIN funcionario as f on funcionario_id = f.id
+            WHERE d.id = '.$id;
 
             $result = $database->query($sql);
 
             if ($result->num_rows > 0) {
-                $found = $result->fetch_all(MYSQLI_ASSOC);
+                $found = $result->fetch_assoc();
             }
         } else {
             $sql = 'SELECT *, d.id
@@ -88,6 +86,88 @@ function selectDevolucao($table = null, $id = null)
             INNER JOIN equipamento as e on equipamento_id = e.id 
             INNER JOIN modelo as m on modelo_id = m.id
             INNER JOIN funcionario as f on funcionario_id = f.id';
+            $result = $database->query($sql);
+
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $found;
+}
+
+/**
+ *  TESTE - TABELA / VIEW -----------------------------------------------------------------------------------------------.
+ */
+function findTeste($table = null, $id = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($id) {
+            $sql = 'SELECT *, t.id
+            FROM '.$table.' as t
+            INNER JOIN equipamento as e on equipamento_id = e.id 
+            INNER JOIN modelo as m on modelo_id = m.id
+            INNER JOIN funcionario as f on funcionario_id = f.id
+            WHERE t.id = '.$id;
+
+            $result = $database->query($sql);
+
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_assoc();
+            }
+        } else {
+            $sql = 'SELECT *, t.id
+            FROM '.$table.' as t
+            INNER JOIN equipamento as e on equipamento_id = e.id 
+            INNER JOIN modelo as m on modelo_id = m.id
+            INNER JOIN funcionario as f on funcionario_id = f.id';
+            $result = $database->query($sql);
+
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $found;
+}
+
+/**
+ *  DEVOLUCAO - TABELA / VIEW -----------------------------------------------------------------------------------------------.
+ */
+function findEquipamento($table = null, $id = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($id) {
+            $sql = 'SELECT *, e.id
+            FROM '.$table.' as e
+            INNER JOIN modelo as m on modelo_id = m.id
+            WHERE e.id = '.$id;
+
+            $result = $database->query($sql);
+
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_assoc();
+            }
+        } else {
+            $sql = 'SELECT *, e.id
+            FROM '.$table.' as e
+            INNER JOIN modelo as m on modelo_id = m.id';
             $result = $database->query($sql);
 
             if ($result->num_rows > 0) {
@@ -121,8 +201,6 @@ function save($table = null, $data = null)
 
     $columns = null;
     $values = null;
-
-    //print_r($data);
 
     foreach ($data as $key => $value) {
         $columns .= trim($key, "'").',';
@@ -209,6 +287,9 @@ function remove($table = null, $id = null)
     close_database($database);
 }
 
+/**
+ *  FUNÇÕES DASHBOARD -----------------------------------------------------------------------------------------------.
+ */
 function selectDistinct($coluna = null, $table = null)
 {
     $database = open_database();

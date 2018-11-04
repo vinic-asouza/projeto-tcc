@@ -1,6 +1,6 @@
 <?php
     require_once 'functions.php';
-    index();
+    indexTeste();
 ?>
 
 <?php include HEADER_TEMPLATE; ?>
@@ -40,39 +40,44 @@
 <thead>
 	<tr>
 		<th class ="text-center">Código</th>			
-		<th class ="text-center">Responsável</th>
-		<th class ="text-center">Cód. Equipamento</th>		
+		<th class ="text-center">Data</th>
+		<th class ="text-center">Cód. Equip</th>		
+		<th class ="text-center">Equipamento</th>
+		<th class ="text-center">Modelo</th>
+		<th class ="text-center">MAC</th>
+		<th class ="text-center">Num. Série</th>
 		<th class ="text-center">Situação</th>
-		<th class ="text-center">Descrição</th>
 		<th class ="text-center">Avaliação</th>
-		<th class ="text-center">Atualizado em</th>
+		<th class ="text-center">Responsável</th>
 		<th class ="text-center">Detalhes</th>
 	</tr>
 </thead>
 <tbody>
-<?php if ($testes) : ?>
-<?php foreach ($testes as $teste) : ?>
+<?php if ($selectTeste) : ?>
+<?php foreach ($selectTeste as $selectTeste) : ?>
 
 	<tr 
-		<?php if ($teste['situacao'] == 'OK') {
+		<?php if ($selectTeste['situacao'] == 'OK') {
      ?> 
 		class="success" <?php
  } ?>  
-			<?php if ($teste['situacao'] == 'DEFEITO') {
+			<?php if ($selectTeste['situacao'] == 'DEFEITO') {
      ?> 
 			class="danger" <?php
  } ?> 
 	>
-
-		<td class ="text-center"><?php echo $teste['id']; ?></td>
-		<td class ="text-center"><?php echo $teste['funcionario_id']; ?></td>
-		<td class ="text-center"><?php echo $teste['equipamento_id']; ?></td>
-		<td class ="text-center"><?php echo $teste['situacao']; ?></td>
-		<td class ="text-center"><?php echo $teste['descricao']; ?></td>
-		<td class ="text-center"><?php echo $teste['avaliacao']; ?></td>
-		<td class ="text-center"><?php echo $teste['modified']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['id']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['modified']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['equipamento_id']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['nome_equip']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['modelo_equip']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['mac_address']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['num_serie']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['situacao']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['avaliacao']; ?></td>
+		<td class ="text-center"><?php echo $selectTeste['nome_funcionario']; ?></td>
 		<td class="actions text-center">
-			<a href="view.php?id=<?php echo $teste['id']; ?>"><i class="fa fa-eye"></i></a>
+			<a href="view.php?id=<?php echo $selectTeste['id']; ?>"><i class="fa fa-eye"></i></a>
 		</td>
 	</tr>
 

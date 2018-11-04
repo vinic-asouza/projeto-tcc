@@ -1,6 +1,6 @@
 <?php
     require_once 'functions.php';
-    index();
+    indexEquipamento();
 ?>
 
 <?php include HEADER_TEMPLATE; ?>
@@ -30,27 +30,33 @@
 <table class="table table-striped" id="id_tabela">
 <thead>
 	<tr>
-		<th class ="text-center">ID</th>
-		<th class ="text-center">Modelo</th>			
+		<th class ="text-center">Cód. Equip</th>
+		<th class ="text-center">Cód. Modelo</th>
+		<th class ="text-center">Nome</th>
+		<th class ="text-center">Marca</th>			
+		<th class ="text-center">Modelo</th>
 		<th class ="text-center">MAC</th>			
 		<th class ="text-center">Num. Série</th>
-		<th class ="text-center">Obs.</th>
+		<th class ="text-center">Tipo</th>
 		<th class ="text-center">Atualizado em</th>
 		<th class ="text-center">Detalhes</th>	
 	</tr>
 </thead>
 <tbody>
-<?php if ($equipamentos) : ?>
-<?php foreach ($equipamentos as $equipamento) : ?>
+<?php if ($selectEquipamentos) : ?>
+<?php foreach ($selectEquipamentos as $selectEquipamento) : ?>
 	<tr>
-		<td class ="text-center"><?php echo $equipamento['id']; ?></td>
-		<td class ="text-center"><?php echo $equipamento['modelo_id']; ?></td>
-		<td class ="text-center"><?php echo $equipamento['mac_address']; ?></td>
-		<td class ="text-center"><?php echo $equipamento['num_serie']; ?></td>
-		<td class ="text-center"><?php echo $equipamento['observacao']; ?></td>
-		<td class ="text-center"><?php echo $equipamento['modified']; ?></td>
+		<td class ="text-center"><?php echo $selectEquipamento['id']; ?></td>
+		<td class ="text-center"><?php echo $selectEquipamento['modelo_id']; ?></td>
+		<td class ="text-center"><?php echo $selectEquipamento['nome_equip']; ?></td>
+		<td class ="text-center"><?php echo $selectEquipamento['marca_equip']; ?></td>
+		<td class ="text-center"><?php echo $selectEquipamento['modelo_equip']; ?></td>
+		<td class ="text-center"><?php echo $selectEquipamento['mac_address']; ?></td>
+		<td class ="text-center"><?php echo $selectEquipamento['num_serie']; ?></td>
+		<td class ="text-center"><?php echo $selectEquipamento['tipo']; ?></td>
+		<td class ="text-center"><?php echo $selectEquipamento['modified']; ?></td>
 		<td class="actions text-center">
-			<a href="view.php?id=<?php echo $equipamento['id']; ?>"><i class="fa fa-eye"></i></a>
+			<a href="view.php?id=<?php echo $selectEquipamento['id']; ?>"><i class="fa fa-eye"></i></a>
 		</td>
 	</tr>
 <?php endforeach; ?>

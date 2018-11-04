@@ -14,9 +14,13 @@
 
 <dl class="dl-horizontal">
 	<dt>Data:</dt>
-	<dd><?php echo $devolucao['data']; ?></dd>
+	<dd><?php echo $devolucao['data']; ?></dd> <hr>
 	<dt>Cód. Equipamento:</dt>
 	<dd><?php echo $devolucao['equipamento_id']; ?></dd>
+	<dt>Cód. Modelo:</dt>
+	<dd><?php echo $devolucao['modelo_id']; ?></dd>
+	<dt>Tipo Equipamento:</dt>
+	<dd><?php echo $devolucao['tipo']; ?></dd>
 	<dt>Nome Equipamento:</dt>
 	<dd><?php echo $devolucao['nome_equip']; ?></dd>
 	<dt>Modelo Equipamento:</dt>
@@ -24,15 +28,23 @@
 	<dt>MAC Address:</dt>
 	<dd><?php echo $devolucao['mac_address']; ?></dd>
 	<dt>Num. Série:</dt>
-	<dd><?php echo $devolucao['num_serie']; ?></dd>
+	<dd><?php echo $devolucao['num_serie']; ?></dd> <hr>
 	<dt>Cód Cliente:</dt>
 	<dd><?php echo $devolucao['cod_cliente']; ?></dd>
 	<dt>Serviço:</dt>
 	<dd><?php echo $devolucao['servico']; ?></dd>
-	<dt>Avaliação:</dt>
-	<dd><?php echo $devolucao['avaliacao']; ?></dd>
-	<dt>Responsável:</dt>
-	<dd><?php echo $devolucao['nome_funcionario']; ?></dd>
+	<dt>Motivo:</dt>
+	<dd><?php echo $devolucao['motivo']; ?></dd>
+	<dt>Cód. Avaliação:</dt>
+	<dd><?php echo $devolucao['avaliacao']; ?></dd> <hr>
+	<dt>Cód. Responsável:</dt>
+	<dd><?php echo $devolucao['funcionario_id']; ?>
+	<dt>Nome:</dt>
+	<dd><?php echo $devolucao['nome_funcionario']; ?>
+	<dt>Setor:</dt>
+	<dd><?php echo $devolucao['setor_func']; ?>
+	<dt>Atualizado em:</dt>
+	<dd><?php echo $devolucao['modified']; ?></dd> <hr>
 </dl>
 
 <div id="actions" class="row">

@@ -42,12 +42,12 @@
 		<th class ="text-center">Código</th>			
 		<th class ="text-center">Data</th>
 		<th class ="text-center">Cód. Equipamento</th>		
-		<th class ="text-center">Nome Equipamento</th>
-		<th class ="text-center">MAC Address</th>
+		<th class ="text-center">Equipamento</th>
+		<th class ="text-center">Modelo</th>
+		<th class ="text-center">MAC</th>
 		<th class ="text-center">Num. Série</th>
 		<th class ="text-center">Cód. Cliente</th>
 		<th class ="text-center">Serviço</th>
-		<th class ="text-center">Descrição técnica</th>
 		<th class ="text-center">Avaliação</th>
 		<th class ="text-center">Responsável</th>
 		<th class ="text-center">Detalhes</th>

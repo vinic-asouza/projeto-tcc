@@ -6,6 +6,9 @@ require_once DBAPI;
 $equipamentos = null;
 $equipamento = null;
 
+$selectEquipamentos = null;
+$selectEquipamento = null;
+
 /**
  *  Listagem de Clientes.
  */
@@ -13,6 +16,12 @@ function index()
 {
     global $equipamentos;
     $equipamentos = find_all('equipamento');
+}
+
+function indexEquipamento()
+{
+    global $selectEquipamentos;
+    $selectEquipamentos = findEquipamento('equipamento');
 }
 
 /**
@@ -50,7 +59,7 @@ function edit()
             header('location: index.php');
         } else {
             global $equipamento;
-            $equipamento = find('equipamento', $id);
+            $equipamento = findEquipamento('equipamento', $id);
         }
     } else {
         header('location: index.php');
@@ -63,7 +72,7 @@ function edit()
 function view($id = null)
 {
     global $equipamento;
-    $equipamento = find('equipamento', $id);
+    $equipamento = findEquipamento('equipamento', $id);
 }
 
 /**
