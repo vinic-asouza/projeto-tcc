@@ -1,6 +1,6 @@
 <?php
     require_once 'functions.php';
-    index();
+    indexDevolucao();
 ?>
 
 <?php include HEADER_TEMPLATE; ?>
@@ -40,33 +40,37 @@
 <thead>
 	<tr>
 		<th class ="text-center">Código</th>			
-		<th class ="text-center">Responsável</th>
-		<th class ="text-center">Cód. Equipamento</th>		
 		<th class ="text-center">Data</th>
+		<th class ="text-center">Cód. Equipamento</th>		
+		<th class ="text-center">Nome Equipamento</th>
+		<th class ="text-center">MAC Address</th>
+		<th class ="text-center">Num. Série</th>
 		<th class ="text-center">Cód. Cliente</th>
 		<th class ="text-center">Serviço</th>
 		<th class ="text-center">Descrição técnica</th>
 		<th class ="text-center">Avaliação</th>
-		<th class ="text-center">Atualizado em</th>
+		<th class ="text-center">Responsável</th>
 		<th class ="text-center">Detalhes</th>
 	</tr>
 </thead>
 <tbody>
-<?php if ($devolucoes) : ?>
-<?php foreach ($devolucoes as $devolucao) : ?>
+<?php if ($selectDevolucoes) : ?>
+<?php foreach ($selectDevolucoes as $selectDevolucao) : ?>
 
 	<tr>
-		<td class ="text-center"><?php echo $devolucao['id']; ?></td>
-		<td class ="text-center"><?php echo $devolucao['funcionario_id']; ?></td>
-		<td class ="text-center"><?php echo $devolucao['equipamento_id']; ?></td>
-		<td class ="text-center"><?php echo $devolucao['data']; ?></td>
-		<td class ="text-center"><?php echo $devolucao['cod_cliente']; ?></td>
-		<td class ="text-center"><?php echo $devolucao['servico']; ?></td>
-		<td class ="text-center"><?php echo $devolucao['motivo']; ?></td>
-		<td class ="text-center"><?php echo $devolucao['avaliacao']; ?></td>
-		<td class ="text-center"><?php echo $devolucao['modified']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['id']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['data']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['equipamento_id']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['nome_equip']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['modelo_equip']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['mac_address']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['num_serie']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['cod_cliente']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['servico']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['avaliacao']; ?></td>
+		<td class ="text-center"><?php echo $selectDevolucao['nome_funcionario']; ?></td>
 		<td class="actions text-center">
-			<a href="view.php?id=<?php echo $devolucao['id']; ?>"><i class="fa fa-eye"></i></a>
+			<a href="view.php?id=<?php echo $selectDevolucao['id']; ?>"><i class="fa fa-eye"></i></a>
 		</td>
 	</tr>
 

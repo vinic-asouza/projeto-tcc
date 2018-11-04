@@ -13,20 +13,26 @@
 <?php endif; ?>
 
 <dl class="dl-horizontal">
-	<dt>Responsável:</dt>
-	<dd><?php echo $devolucao['funcionario_id']; ?></dd>
-	<dt>Cód Equipamento:</dt>
-	<dd><?php echo $devolucao['equipamento_id']; ?></dd>
 	<dt>Data:</dt>
 	<dd><?php echo $devolucao['data']; ?></dd>
-	<dt>Cód. Cliente:</dt>
+	<dt>Cód. Equipamento:</dt>
+	<dd><?php echo $devolucao['equipamento_id']; ?></dd>
+	<dt>Nome Equipamento:</dt>
+	<dd><?php echo $devolucao['nome_equip']; ?></dd>
+	<dt>Modelo Equipamento:</dt>
+	<dd><?php echo $devolucao['modelo_equip']; ?></dd>
+	<dt>MAC Address:</dt>
+	<dd><?php echo $devolucao['mac_address']; ?></dd>
+	<dt>Num. Série:</dt>
+	<dd><?php echo $devolucao['num_serie']; ?></dd>
+	<dt>Cód Cliente:</dt>
 	<dd><?php echo $devolucao['cod_cliente']; ?></dd>
 	<dt>Serviço:</dt>
 	<dd><?php echo $devolucao['servico']; ?></dd>
-	<dt>Motivo:</dt>
-	<dd><?php echo $devolucao['motivo']; ?></dd>
 	<dt>Avaliação:</dt>
 	<dd><?php echo $devolucao['avaliacao']; ?></dd>
+	<dt>Responsável:</dt>
+	<dd><?php echo $devolucao['nome_funcionario']; ?></dd>
 </dl>
 
 <div id="actions" class="row">

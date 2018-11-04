@@ -32,7 +32,12 @@ function find($table = null, $id = null)
     $found = null;
     try {
         if ($id) {
-            $sql = 'SELECT * FROM '.$table.' WHERE id = '.$id;
+            $sql = 'SELECT *, d.id
+            FROM '.$table.' as d
+            INNER JOIN equipamento as e on equipamento_id = e.id 
+            INNER JOIN modelo as m on modelo_id = m.id
+            INNER JOIN funcionario as f on funcionario_id = f.id
+            WHERE d.id = '.$id;
 
             $result = $database->query($sql);
 
@@ -41,6 +46,48 @@ function find($table = null, $id = null)
             }
         } else {
             $sql = 'SELECT * FROM '.$table;
+            $result = $database->query($sql);
+
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $found;
+}
+/**
+ *  SELECT DEVOLUCAO (ITENS PARA SEREM MOSTRADOS).
+ */
+function selectDevolucao($table = null, $id = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($id) {
+            $sql = 'SELECT *, d.id
+                    FROM '.$table.' as d
+                    INNER JOIN equipamento as e on equipamento_id = e.id 
+                    INNER JOIN modelo as m on modelo_id = m.id
+                    INNER JOIN funcionario as f on funcionario_id = f.id
+                    WHERE d.id = '.$id;
+
+            $result = $database->query($sql);
+
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        } else {
+            $sql = 'SELECT *, d.id
+            FROM '.$table.' as d
+            INNER JOIN equipamento as e on equipamento_id = e.id 
+            INNER JOIN modelo as m on modelo_id = m.id
+            INNER JOIN funcionario as f on funcionario_id = f.id';
             $result = $database->query($sql);
 
             if ($result->num_rows > 0) {

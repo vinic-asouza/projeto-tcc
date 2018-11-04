@@ -6,6 +6,9 @@ require_once DBAPI;
 $devolucoes = null;
 $devolucao = null;
 
+$selectDevolucoes = null;
+$selectDevolucao = null;
+
 /**
  *  Listagem de Clientes.
  */
@@ -13,6 +16,12 @@ function index()
 {
     global $devolucoes;
     $devolucoes = find_all('devolucao');
+}
+
+function indexDevolucao()
+{
+    global $selectDevolucoes;
+    $selectDevolucoes = selectDevolucao('devolucao');
 }
 
 /**
