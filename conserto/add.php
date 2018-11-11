@@ -23,12 +23,22 @@
 
     <div class="form-group col-md-2">
       <label for="campo2">Data Envio</label>
-      <input type="text" class="form-control" name="conserto['data_envio']">
+      <div class="input-group date" data-provide="datepicker" id="anterior_data">
+        <input type="text" class="form-control" name="conserto['data_envio']">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </div>
+      </div>
     </div>
 
     <div class="form-group col-md-2">
       <label for="campo2">Previsão Chegada</label>
-      <input type="text" class="form-control" name="conserto['previsao_chegada']">
+      <div class="input-group date" data-provide="datepicker" id="posterior_data">
+        <input type="text" class="form-control" name="conserto['previsao_chegada']">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </div>
+      </div>
     </div>
 
     <div class="form-group col-md-2">

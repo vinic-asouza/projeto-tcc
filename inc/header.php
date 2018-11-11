@@ -88,7 +88,7 @@
           </ul>
           <div>
                 <a href="<?php echo BASEURL; ?>#"  id="navbar" class="navbar-brand"> </a>
-                <a href="#"  id="navbar" class="navbar-brand"><i class="fa fa-user"></i> Login </a>
+                <a href="#"  id="navbar" class="navbar-brand"><i class="fa fa-user"></i> Sair </a>
           </div>
         </div>
       </div>

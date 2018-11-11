@@ -30,3 +30,4 @@ if (!defined('DBAPI')) {
 /* caminhos para templates**/
 define('HEADER_TEMPLATE', ABSPATH.'inc/header.php');
 define('FOOTER_TEMPLATE', ABSPATH.'inc/footer.php');
+define('LOGIN_TEMPLATE', ABSPATH.'inc/nav_login.php');

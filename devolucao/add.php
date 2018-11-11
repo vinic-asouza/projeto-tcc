@@ -11,18 +11,17 @@
   <!-- area de campos do form -->
   <hr />
   <div class="row">
-  <!--
-    <div class="form-group col-md-4">
-      <label for="id">Código</label>
-      <input type="text" class="form-control" name="modelo['id_modelo']">
-    </div>
-  -->
- 
+
     <div class="form-group col-md-2">
       <label for="campo2">Data</label>
-      <input type="text" class="form-control" name="devolucao['data']">
+      <div class="input-group date" data-provide="datepicker" id="anterior_data">
+        <input type="text" class="form-control" name="devolucao['data']">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </div>
+      </div>
     </div>
-
+    
     <div class="form-group col-md-2">
       <label for="campo3">Cód. Responsável</label>
       <input type="text" class="form-control" name="devolucao['funcionario_id']">
@@ -43,7 +42,7 @@
       <input type="text" class="form-control" name="devolucao['servico']">
     </div>
 
-    <div class="form-group col-md-10">
+    <div class="form-group col-md-8">
       <label for="campo7">Descrição técnica</label>
       <input type="text" class="form-control" name="devolucao['motivo']">
     </div>
@@ -70,7 +69,6 @@
     </div>
 
   </div>
-
     <div id="actions" class="row">
     <div class="col-md-12">
       <button type="submit" class="btn btn-primary">Salvar</button>
