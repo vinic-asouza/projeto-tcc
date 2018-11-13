@@ -25,7 +25,17 @@
 
     <div class="form-group col-md-2">
       <label for="campo3">Situação</label>
-      <input type="text" class="form-control" name="teste['situacao']">
+      <select type="text" class="form-control" name="teste['situacao']">
+        <option>
+          ...
+        </option>
+        <option>
+          OK
+        </option>
+        <option>
+          DEFEITO
+        </option>
+      </select>
     </div>
 
     <div class="form-group col-md-4">
@@ -34,13 +44,37 @@
     </div>
 
     <div class="form-group col-md-2">
-      <label for="campo4">Avaliação</label>
-      <input type="text" class="form-control" name="teste['avaliacao']">
+      <label for="campo8">Avaliação</label>
+      <select type="text" class="form-control" name="teste['avaliacao']">
+        <option>
+          ...
+        </option>
+        <?php $item = selectDistinct('id', 'avaliacao'); ?>
+        <?php foreach ($item as $i) :  ?>
+        <option ?>
+          <?php
+            echo $i['id'];
+          ?>
+        </option>
+        <?php endforeach; ?>
+      </select>
     </div>
 
     <div class="form-group col-md-2">
-      <label for="campo5">Responsável</label>
-      <input type="text" class="form-control" name="teste['funcionario_id']">
+      <label for="campo3">Cód. Responsável</label>
+      <select type="text" class="form-control" name="teste['funcionario_id']">
+        <option>
+          ...
+        </option>
+        <?php $item = selectDistinct('id', 'funcionario'); ?>
+        <?php foreach ($item as $i) :  ?>
+        <option ?>
+          <?php
+            echo $i['id'];
+          ?>
+        </option>
+        <?php endforeach; ?>
+      </select>
     </div>
 
     <div class="form-group col-md-4">

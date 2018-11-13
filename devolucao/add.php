@@ -21,12 +21,24 @@
         </div>
       </div>
     </div>
-    
+
     <div class="form-group col-md-2">
       <label for="campo3">Cód. Responsável</label>
-      <input type="text" class="form-control" name="devolucao['funcionario_id']">
+      <select type="text" class="form-control" name="devolucao['funcionario_id']">
+        <option>
+          ...
+        </option>
+        <?php $item = selectDistinct('id', 'funcionario'); ?>
+        <?php foreach ($item as $i) :  ?>
+        <option ?>
+          <?php
+            echo $i['id'];
+          ?>
+        </option>
+        <?php endforeach; ?>
+      </select>
     </div>
-    
+
     <div class="form-group col-md-3">
       <label for="campo4">Cód. Equip.</label>
       <input type="text" class="form-control" name="devolucao['equipamento_id']">
