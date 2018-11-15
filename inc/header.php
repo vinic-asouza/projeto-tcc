@@ -55,7 +55,7 @@
                     <i class="fa fa-pencil"></i> Cadastros <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="<?php echo BASEURL; ?>modelos">Gerenciar Modelos de Equip</a></li>
+                    <li><a href="<?php echo BASEURL; ?>Modelos">Gerenciar Modelos de Equip</a></li>
                     <li><a href="<?php echo BASEURL; ?>funcionarios">Gerenciar Funcionarios</a></li>
                     <li><a href="<?php echo BASEURL; ?>equipamento">Gerenciar Equipamentos</a></li>
                 </ul>
